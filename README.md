@@ -1,1 +1,18 @@
-# DSW2023-Data_Sayens
+# Setup environment
+
+```
+conda create --name main-ds python=3.10.12
+conda activate main-ds
+pip install -r requirements.txt
+```
+
+# If you want to skip Setup Environment
+```
+pip install -r requirements.txt
+```
+
+# Run steamlit app
+
+```
+streamlit run dashboard.py
+```
