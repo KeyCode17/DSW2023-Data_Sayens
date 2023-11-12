@@ -1031,7 +1031,7 @@ if submitted:
     user_input[4] = education_product_mapping[user_input[4]]
     user_input[5] = use_myapp_mapping[user_input[5]]
     user_input[6] = video_product_mapping[user_input[6]]
-    user_input[8] = call_center_mapping[user_input[8]]
+    user_input[9] = call_center_mapping[user_input[9]]
     user_input[10] = call_center_mapping[user_input[10]]
 
     # Make prediction
