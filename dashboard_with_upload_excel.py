@@ -38,11 +38,11 @@ with st.sidebar:
     st.markdown("[Games Product](#games-product-uses-comparasion)")
     st.markdown("[Music Product](#music-product-uses-comparasion)")
     st.markdown("[Education Product](#education-product-uses-comparasion)")
-    st.markdown("[Use MyApp](#/#use-myapp-uses-comparasion)")
+    st.markdown("[Use MyApp](#use-myapp-uses-comparasion)")
     st.markdown("[Video Product](#video-product-uses-comparasion)")
     st.markdown("[Payment Method](#payment-method-comparasion)")
     st.markdown("[Classification Report](#classification-random-forest-report)")
-    st.markdown("[Predict Data](#manual-input-for-prediction)")
+    st.markdown("[Predict Data](#input-for-prediction)")
 
 
 if not (jakarta_selected or bandung_selected):
