@@ -15,8 +15,8 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 # End Library
 
 dirloc = os.path.dirname(os.path.abspath(__file__))
-heatdf = pd.read_excel(dirloc + "\dataset\heat.xlsx", index_col=0)
-decdf = pd.read_excel(dirloc + "\dataset\decdf.xlsx")
+heatdf = pd.read_excel(dirloc + "/dataset/heat.xlsx", index_col=0)
+decdf = pd.read_excel(dirloc + "/dataset/decdf.xlsx")
 
 with st.sidebar:
     # Title
