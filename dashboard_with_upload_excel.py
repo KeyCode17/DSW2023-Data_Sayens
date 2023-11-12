@@ -83,9 +83,7 @@ explode = (0.1, 0.2)
 
 fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-# Check if the lengths of colors and explode match sizes
-if len(colors) != len(sizes) or len(explode) != len(sizes):
-    raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
         
 wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                    explode=explode, shadow=True, startangle=85,
