@@ -985,7 +985,7 @@ st.caption(f"Test ROC AUC: {roc_auc_test:.2f}")
 st.header("Input for Prediction")
 
 with st.form(key='my_form'):
-    # st.subheader("Input Data Manual")
+    st.subheader("Input Data Manual")
     # Add input fields for each feature
     tenure_months = st.number_input("Tenure Months", min_value=0, step=1, value=1)
     device_class = st.selectbox("Device Class", ['Low', 'Medium', 'High'], index=0)
@@ -998,115 +998,115 @@ with st.form(key='my_form'):
     call_center = st.selectbox("Call Center", ['No', 'Yes'], index=0)
     CLTV = st.number_input("CLTV (Predicted Thou. IDR)", min_value=0, step=1, value=1)
     payment_method = st.selectbox("Payment Method", ['Digital Wallet', 'Pulsa', 'Debit', 'Credit'], index=0)
-    # st.text("")
-    # st.subheader("Or Upload Your Excel File")
-    # st.markdown("[Template for Excel](https://github.com/KeyCode17/DSW2023-Data_Sayens/raw/main/prediction_template.xlsx)")
-    # # File uploader for batch processing
-    # uploaded_file = st.file_uploader("Upload Excel file for batch processing", type=["xlsx", "xls"])
+    st.text("")
+    st.subheader("Or Upload Your Excel File")
+    st.markdown("[Template for Excel](https://github.com/KeyCode17/DSW2023-Data_Sayens/raw/main/prediction_template.xlsx)")
+    # File uploader for batch processing
+    uploaded_file = st.file_uploader("Upload Excel file for batch processing", type=["xlsx", "xls"])
 
     # Submit button
     submitted = st.form_submit_button(label='Apply')
 
 # Only execute the following code if the form is submitted
 if submitted:
-    # if uploaded_file is not None:
-    #     # Load the Excel file into a DataFrame
-    #     batch_data = pd.read_excel(uploaded_file)
+    if uploaded_file is not None:
+        # Load the Excel file into a DataFrame
+        batch_data = pd.read_excel(uploaded_file)
 
-    #     # Process each row in the DataFrame
-    #     predictions = []  # Move this line outside the for loop
-    #     for index, row in batch_data.iterrows():
-    #         try:
-    #             user_input = [
-    #                 row['Tenure Months'],
-    #                 row['Device Class'],
-    #                 row['Games Product'],
-    #                 row['Music Product'],
-    #                 row['Education Product'],
-    #                 row['Use MyApp'],
-    #                 row['Video Product'],
-    #                 row['Monthly Purchase (Thou. IDR)'],
-    #                 row['Call Center'],
-    #                 row['CLTV (Predicted Thou. IDR)'],
-    #                 row['Payment Method']
-    #             ]
+        # Process each row in the DataFrame
+        predictions = []  # Move this line outside the for loop
+        for index, row in batch_data.iterrows():
+            try:
+                user_input = [
+                    row['Tenure Months'],
+                    row['Device Class'],
+                    row['Games Product'],
+                    row['Music Product'],
+                    row['Education Product'],
+                    row['Use MyApp'],
+                    row['Video Product'],
+                    row['Monthly Purchase (Thou. IDR)'],
+                    row['Call Center'],
+                    row['CLTV (Predicted Thou. IDR)'],
+                    row['Payment Method']
+                ]
 
-    #             # Convert categorical features to numerical values
-    #             device_class_mapping = {'Low': 0, 'Medium': 1, 'High': 2}
-    #             games_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    #             music_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    #             education_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    #             use_myapp_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    #             video_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    #             call_center_mapping = {'No': 0, 'Yes': 1}
-    #             payment_method_mapping = {"Digital Wallet": 0, "Pulsa": 1, "Debit": 2, "Credit": 3}
+                # Convert categorical features to numerical values
+                device_class_mapping = {'Low': 0, 'Medium': 1, 'High': 2}
+                games_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+                music_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+                education_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+                use_myapp_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+                video_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+                call_center_mapping = {'No': 0, 'Yes': 1}
+                payment_method_mapping = {"Digital Wallet": 0, "Pulsa": 1, "Debit": 2, "Credit": 3}
 
-    #             # Convert categorical features to numerical values
-    #             user_input[1] = device_class_mapping[user_input[1]]
-    #             user_input[2] = games_product_mapping[user_input[2]]
-    #             user_input[3] = music_product_mapping[user_input[3]]
-    #             user_input[4] = education_product_mapping[user_input[4]]
-    #             user_input[5] = use_myapp_mapping[user_input[5]]
-    #             user_input[6] = video_product_mapping[user_input[6]]
-    #             user_input[8] = call_center_mapping[user_input[8]]
-    #             user_input[10] = payment_method_mapping[user_input[10]]
+                # Convert categorical features to numerical values
+                user_input[1] = device_class_mapping[user_input[1]]
+                user_input[2] = games_product_mapping[user_input[2]]
+                user_input[3] = music_product_mapping[user_input[3]]
+                user_input[4] = education_product_mapping[user_input[4]]
+                user_input[5] = use_myapp_mapping[user_input[5]]
+                user_input[6] = video_product_mapping[user_input[6]]
+                user_input[8] = call_center_mapping[user_input[8]]
+                user_input[10] = payment_method_mapping[user_input[10]]
 
-    #             # Make prediction
-    #             prediction = model.predict([user_input])[0]
-    #             if prediction == 0:
-    #                 predictions.append("No Churn")
-    #             else:
-    #                 predictions.append("Churn")
-    #         except KeyError as e:
-    #             st.error(f"Error processing row {index + 2}: {e}. Make sure all columns are correct.")
-    #             sys.exit()
+                # Make prediction
+                prediction = model.predict([user_input])[0]
+                if prediction == 0:
+                    predictions.append("No Churn")
+                else:
+                    predictions.append("Churn")
+            except KeyError as e:
+                st.error(f"Error processing row {index + 2}: {e}. Make sure all columns are correct.")
+                sys.exit()
 
-    #     # Move the block below outside the for loop
-    #     batch_data.insert(0, 'Prediction Result', predictions)
-    #     st.header("Batch Prediction Result")
-    #     st.dataframe(batch_data)
-    # else:
-    user_input = [
-        tenure_months,
-        device_class,
-        games_product,
-        music_product,
-        education_product,
-        use_myapp,
-        video_product,
-        monthly_purchase,
-        call_center,
-        CLTV,
-        payment_method
-    ]
-
-    # Convert categorical features to numerical values
-    device_class_mapping = {'Low': 0, 'Medium': 1, 'High': 2}
-    games_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    music_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    education_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    use_myapp_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    video_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
-    call_center_mapping = {'No': 0, 'Yes': 1}
-    payment_method_mapping = {"Digital Wallet": 0, "Pulsa": 1, "Debit": 2, "Credit":3}
-
-    # Convert categorical features to numerical values
-    user_input[1] = device_class_mapping[user_input[1]]
-    user_input[2] = games_product_mapping[user_input[2]]
-    user_input[3] = music_product_mapping[user_input[3]]
-    user_input[4] = education_product_mapping[user_input[4]]
-    user_input[5] = use_myapp_mapping[user_input[5]]
-    user_input[6] = video_product_mapping[user_input[6]]
-    user_input[8] = call_center_mapping[user_input[8]]
-    user_input[10] = payment_method_mapping[user_input[10]]
-
-    # Make prediction
-    prediction = model.predict([user_input])[0]
-
-    st.header("Prediction Result")
-    if prediction == 0:
-        st.success("The model predicts 'No Churn'.")
+        # Move the block below outside the for loop
+        batch_data.insert(0, 'Prediction Result', predictions)
+        st.header("Batch Prediction Result")
+        st.dataframe(batch_data)
     else:
-        st.error("The model predicts 'Churn'.")
+        user_input = [
+            tenure_months,
+            device_class,
+            games_product,
+            music_product,
+            education_product,
+            use_myapp,
+            video_product,
+            monthly_purchase,
+            call_center,
+            CLTV,
+            payment_method
+        ]
+
+        # Convert categorical features to numerical values
+        device_class_mapping = {'Low': 0, 'Medium': 1, 'High': 2}
+        games_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+        music_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+        education_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+        use_myapp_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+        video_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
+        call_center_mapping = {'No': 0, 'Yes': 1}
+        payment_method_mapping = {"Digital Wallet": 0, "Pulsa": 1, "Debit": 2, "Credit":3}
+
+        # Convert categorical features to numerical values
+        user_input[1] = device_class_mapping[user_input[1]]
+        user_input[2] = games_product_mapping[user_input[2]]
+        user_input[3] = music_product_mapping[user_input[3]]
+        user_input[4] = education_product_mapping[user_input[4]]
+        user_input[5] = use_myapp_mapping[user_input[5]]
+        user_input[6] = video_product_mapping[user_input[6]]
+        user_input[8] = call_center_mapping[user_input[8]]
+        user_input[10] = payment_method_mapping[user_input[10]]
+
+        # Make prediction
+        prediction = model.predict([user_input])[0]
+
+        st.header("Prediction Result")
+        if prediction == 0:
+            st.success("The model predicts 'No Churn'.")
+        else:
+            st.error("The model predicts 'Churn'.")
     # else:
     #     st.error("BLANK HERE SOMETHING WRONG WITH YOUR DATA")
