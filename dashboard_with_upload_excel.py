@@ -634,7 +634,7 @@ with tab4:
     plt.clf()
 
 st.subheader("Video Product Uses Comparasion")
-st.caption("Just like customers who use myapp, customers who use internet service for video have a strong impact that can make customers leave the company, so it is necessary to improve the video product.")
+st.caption("Just like customers who use myapp, customers who use internet service for video  have a strong impact that can make customers leave the company, so it is necessary to improve connection stream between majority video streaming platform.")
 
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Video Product]", "[Use Video Product]", "[Correlation]"])
 with tab1:
