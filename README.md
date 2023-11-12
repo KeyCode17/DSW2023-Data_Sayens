@@ -1,3 +1,7 @@
+Link Streamlit Cloud : 
+- [Dashboard(Single Data)](https://dsw2023-datasayens.streamlit.app)
+- [Dashboard(Can Upload excel file for batch prediction)](https://dsw2023-datasayens-batch-upload.streamlit.app)
+
 # Setup environment
 
 ```
