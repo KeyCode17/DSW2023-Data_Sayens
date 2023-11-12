@@ -36,9 +36,11 @@ with st.sidebar:
     st.subheader("Jump to Analysis Result Section")
     st.markdown("[Call Center](#call-center-comparasion)")
     st.markdown("[Games Product](#games-product-uses-comparasion)")
-    st.markdown("[Video Product](#video-product-uses-comparasion)")
+    st.markdown("[Music Product](#music-product-uses-comparasion)")
     st.markdown("[Education Product](#education-product-uses-comparasion)")
+    st.markdown("[Use MyApp](#/#use-myapp-uses-comparasion)")
     st.markdown("[Video Product](#video-product-uses-comparasion)")
+    st.markdown("[Payment Method](#payment-method-comparasion)")
     st.markdown("[Classification Report](#classification-random-forest-report)")
     st.markdown("[Predict Data](#manual-input-for-prediction)")
 
@@ -992,8 +994,8 @@ with st.form(key='my_form'):
     use_myapp = st.selectbox("Use MyApp", ['No', 'Yes', 'No internet service'], index=0)
     video_product = st.selectbox("Video Product", ['No', 'Yes', 'No internet service'], index=0)
     monthly_purchase = st.number_input("Monthly Purchase", min_value=0, step=1, value=1)
-    call_center = st.selectbox("Call Center", ['No', 'Yes'], index=0),
-    CLTV = st.number_input("CLTV (Predicted Thou. IDR)", min_value=0, step=1, value=1), 
+    call_center = st.selectbox("Call Center", ['No', 'Yes'], index=0)
+    CLTV = st.number_input("CLTV (Predicted Thou. IDR)", min_value=0, step=1, value=1)
     payment_method = st.selectbox("Payment Method", ['Digital Wallet', 'Pulsa', 'Debit', 'Credit'], index=0)
 
     # Submit button
@@ -1024,15 +1026,15 @@ if submitted:
     use_myapp_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
     video_product_mapping = {'No': 0, 'Yes': 1, 'No internet service': 3}
     call_center_mapping = {'No': 0, 'Yes': 1}
-    payment_method = {"Digital Wallet": 0, "Pulsa": 1, "Debit": 2, "Credit":3}
+    payment_method_mapping = {"Digital Wallet": 0, "Pulsa": 1, "Debit": 2, "Credit":3}
     user_input[1] = device_class_mapping[user_input[1]]
     user_input[2] = games_product_mapping[user_input[2]]
     user_input[3] = music_product_mapping[user_input[3]]
     user_input[4] = education_product_mapping[user_input[4]]
     user_input[5] = use_myapp_mapping[user_input[5]]
     user_input[6] = video_product_mapping[user_input[6]]
-    user_input[9] = call_center_mapping[user_input[9]]
-    user_input[10] = call_center_mapping[user_input[10]]
+    user_input[8] = call_center_mapping[user_input[8]]
+    user_input[10] = payment_method_mapping[user_input[10]]
 
     # Make prediction
     prediction = model.predict([user_input])[0]
