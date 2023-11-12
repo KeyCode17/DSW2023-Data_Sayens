@@ -78,7 +78,7 @@ if any(size <= 0 for size in sizes):
             raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
         
 labels = 'Loyal Client', 'Client Left'
-colors = ['#003f5c', '#ffa600']
+
 explode = (0.1, 0.2)
 
 fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
@@ -87,7 +87,7 @@ fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 if len(colors) != len(sizes) or len(explode) != len(sizes):
     raise ValueError("Lengths of colors and explode should match the length of sizes.")
         
-wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                    explode=explode, shadow=True, startangle=85,
                                    pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -100,7 +100,7 @@ st.pyplot(fig)
 plt.clf()
 
 # Count Plot
-ax = sns.countplot(x='Location', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+ax = sns.countplot(x='Location', hue='Churn Label', data=filtered_decdf )
 
 label = {'No Churn', 'Churn'}
 
@@ -139,7 +139,7 @@ st.caption("It can be seen from the display data, that the service of the call c
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Call Center]", "[Use Call Center]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Call Center', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Call Center', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -174,16 +174,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -204,16 +202,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -243,7 +239,7 @@ st.caption("It can be seen from the display data, that customers who use interne
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Games Product]", "[Use Games Product]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Games Product', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Games Product', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -278,16 +274,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -308,16 +302,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -347,7 +339,7 @@ st.caption("It can be seen from the display data, that customers who use interne
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Music Product]", "[Use Music Product]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Music Product', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Music Product', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -382,16 +374,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -412,16 +402,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -453,7 +441,7 @@ st.caption("It can be seen from the display data that customers who use internet
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Education Product]", "[Use Education Product]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Education Product', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Education Product', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -488,16 +476,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -518,16 +504,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -557,7 +541,7 @@ st.caption("It can be seen from the display data, that customers who use interne
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use MyApp]", "[Use MyApp]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Use MyApp', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Use MyApp', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -592,16 +576,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -622,16 +604,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -661,7 +641,7 @@ st.caption("Just like customers who use myapp, customers who use internet servic
 tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Video Product]", "[Use Video Product]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Video Product', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Video Product', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -696,16 +676,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -726,16 +704,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -766,7 +742,7 @@ st.caption("When viewed from each data, customers with pulsa payment methods hav
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["[Comparasion]", "[By Digital Wallet]", "[By Pulsa]", "[By Debit]", "[By Credit]", "[Correlation]"])
 with tab1:
     # Count Plot
-    ax = sns.countplot(x='Payment Method', hue='Churn Label', data=filtered_decdf, palette={1: '#ffa600', 0: '#003f5c'})
+    ax = sns.countplot(x='Payment Method', hue='Churn Label', data=filtered_decdf )
 
     label = ['No Churn', 'Churn']
 
@@ -801,16 +777,14 @@ with tab2:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -831,16 +805,14 @@ with tab3:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -861,16 +833,14 @@ with tab4:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
@@ -891,16 +861,14 @@ with tab5:
                 raise ValueError("Invalid sizes: sizes should be positive and non-zero.")
 
     labels = 'Loyal Client', 'Client Left'
-    colors = ['#003f5c', '#ffa600']
+      
     explode = (0.1, 0.2)
 
     fig, ax_tes = plt.subplots()  # Use a different variable name for the axis
 
-    # Check if the lengths of colors and explode match sizes
-    if len(colors) != len(sizes) or len(explode) != len(sizes):
-        raise ValueError("Lengths of colors and explode should match the length of sizes.")
+  
 
-    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%', colors=colors, 
+    wedges, texts, autotexts = ax_tes.pie(sizes, autopct='%1.1f%%',   
                                        explode=explode, shadow=True, startangle=85,
                                        pctdistance=0.85, wedgeprops={'width': 1}, textprops={'color': 'white'})
 
