@@ -15,7 +15,13 @@ pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-# Run steamlit app
+# Run Main steamlit app
+
+```
+streamlit dashboard_with_upload_excel.py
+```
+
+# Run Alternative steamlit app
 
 ```
 streamlit run dashboard.py
