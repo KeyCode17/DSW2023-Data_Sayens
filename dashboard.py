@@ -145,7 +145,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
 
     # Xticks Label 
     var = ['No', 'Yes']
@@ -249,7 +249,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
 
     # Xticks Label 
     var = ['No', 'Yes', 'No internet service']
@@ -353,7 +353,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
 
     # Xticks Label 
     var = ['No', 'Yes', 'No internet service']
@@ -443,6 +443,8 @@ with tab4:
 
     plt.clf()
 
+plt.clf()
+
 st.subheader("Education Product Uses Comparasion")
 st.caption("It can be seen from the display data that customers who use internet service for educational products are among those who do not have a significant impact on churn rates.")
 
@@ -457,7 +459,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
 
     # Xticks Label 
     var = ['No', 'Yes', 'No internet service']
@@ -561,7 +563,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
 
     # Xticks Label 
     var = ['No', 'Yes', 'No internet service']
@@ -665,7 +667,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
 
     # Xticks Label 
     var = ['No', 'Yes', 'No internet service']
@@ -770,7 +772,7 @@ with tab1:
     for i, p in enumerate(ax.patches):
             if i < len(ax.patches)-len(label):
                 ax.annotate(f'{p.get_height()}', (p.get_x() + p.get_width() / 2., p.get_height() / 100 + 50),
-                        ha='center', fontsize=10, color='white')
+                        ha='center', fontsize=8, color='white')
     
     # Xticks Label 
     var = ['Digital Wallet', 'Pulsa', 'Debit', 'Credit']
