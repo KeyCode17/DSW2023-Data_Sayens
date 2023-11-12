@@ -34,13 +34,13 @@ with st.sidebar:
     if not jakarta_selected and not bandung_selected:
         st.warning("Please select at least one location.")
     st.subheader("Jump to Analysis Result Section")
-    st.markdown("[Call Center](#call-center-comparasion)")
-    st.markdown("[Games Product](#games-product-uses-comparasion)")
-    st.markdown("[Music Product](#music-product-uses-comparasion)")
-    st.markdown("[Education Product](#education-product-uses-comparasion)")
-    st.markdown("[Use MyApp](#use-myapp-uses-comparasion)")
-    st.markdown("[Video Product](#video-product-uses-comparasion)")
-    st.markdown("[Payment Method](#payment-method-comparasion)")
+    st.markdown("[Call Center](#call-center-Comparison)")
+    st.markdown("[Games Product](#games-product-uses-Comparison)")
+    st.markdown("[Music Product](#music-product-uses-Comparison)")
+    st.markdown("[Education Product](#education-product-uses-Comparison)")
+    st.markdown("[Use MyApp](#use-myapp-uses-Comparison)")
+    st.markdown("[Video Product](#video-product-uses-Comparison)")
+    st.markdown("[Payment Method](#payment-method-Comparison)")
     st.markdown("[Classification Report](#classification-random-forest-report)")
     st.markdown("[Predict Data](#input-for-prediction)")
 
@@ -128,10 +128,10 @@ st.pyplot(plt)
 plt.clf()
 
 st.header("Analysis Result")
-st.subheader("Call Center Comparasion")
+st.subheader("Call Center Comparison")
 st.caption("It can be seen from the display data, that the service of the call center is not the cause of customers leaving the company, even when customers use call center services, it can reduce the number of customers leaving the company.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Call Center]", "[Use Call Center]", "[Correlation]"])
+tab1, tab2, tab3, tab4 = st.tabs(["[Comparison]", "[Does Not Use Call Center]", "[Use Call Center]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Call Center', hue='Churn Label', data=filtered_decdf )
@@ -228,10 +228,10 @@ with tab4:
 
     plt.clf()
 
-st.subheader("Games Product Uses Comparasion")
+st.subheader("Games Product Uses Comparison")
 st.caption("It can be seen from the display data, that customers who use internet services on games product tend to have a significantly higher level of loyalty to the company than customers who do not use it as internet services on games product, so it can be estimated that customers are very satisfied with internet services in the use of games product.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Games Product]", "[Use Games Product]", "[Correlation]"])
+tab1, tab2, tab3, tab4 = st.tabs(["[Comparison]", "[Does Not Use Games Product]", "[Use Games Product]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Games Product', hue='Churn Label', data=filtered_decdf )
@@ -328,10 +328,10 @@ with tab4:
 
     plt.clf()
 
-st.subheader("Music Product Uses Comparasion")
+st.subheader("Music Product Uses Comparison")
 st.caption("It can be seen from the display data, that customers who use internet services for music products have the most customers, so it can be estimated that for now, customers are quite satisfied with internet services and it can be said that the purpose of customers using internet services at the company is to use the music product.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Music Product]", "[Use Music Product]", "[Correlation]"])
+tab1, tab2, tab3, tab4 = st.tabs(["[Comparison]", "[Does Not Use Music Product]", "[Use Music Product]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Music Product', hue='Churn Label', data=filtered_decdf )
@@ -430,10 +430,10 @@ with tab4:
 
 plt.clf()
 
-st.subheader("Education Product Uses Comparasion")
+st.subheader("Education Product Uses Comparison")
 st.caption("It can be seen from the display data that customers who use internet service for educational products are among those who do not have a significant impact on churn rates.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Education Product]", "[Use Education Product]", "[Correlation]"])
+tab1, tab2, tab3, tab4 = st.tabs(["[Comparison]", "[Does Not Use Education Product]", "[Use Education Product]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Education Product', hue='Churn Label', data=filtered_decdf )
@@ -530,10 +530,10 @@ with tab4:
 
     plt.clf()
 
-st.subheader("Use MyApp Uses Comparasion")
+st.subheader("Use MyApp Uses Comparison")
 st.caption("It can be seen from the display data, that customers who use internet service for Use MyApp, have the most impact on customers changing internet companies, so it is necessary to improve service to customers.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use MyApp]", "[Use MyApp]", "[Correlation]"])
+tab1, tab2, tab3, tab4 = st.tabs(["[Comparison]", "[Does Not Use MyApp]", "[Use MyApp]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Use MyApp', hue='Churn Label', data=filtered_decdf )
@@ -630,10 +630,10 @@ with tab4:
 
     plt.clf()
 
-st.subheader("Video Product Uses Comparasion")
+st.subheader("Video Product Uses Comparison")
 st.caption("Just like customers who use myapp, customers who use internet service for video  have a strong impact that can make customers leave the company, so it is necessary to improve the improve connection stream between majority video streaming platform.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["[Comparasion]", "[Does Not Use Video Product]", "[Use Video Product]", "[Correlation]"])
+tab1, tab2, tab3, tab4 = st.tabs(["[Comparison]", "[Does Not Use Video Product]", "[Use Video Product]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Video Product', hue='Churn Label', data=filtered_decdf )
@@ -731,10 +731,10 @@ with tab4:
 
     plt.clf()
 
-st.subheader("Payment Method Comparasion")
+st.subheader("Payment Method Comparison")
 st.caption("When viewed from each data, customers with pulsa payment methods have the highest impact on leaving the company.")
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["[Comparasion]", "[By Digital Wallet]", "[By Pulsa]", "[By Debit]", "[By Credit]", "[Correlation]"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["[Comparison]", "[By Digital Wallet]", "[By Pulsa]", "[By Debit]", "[By Credit]", "[Correlation]"])
 with tab1:
     # Count Plot
     ax = sns.countplot(x='Payment Method', hue='Churn Label', data=filtered_decdf )
